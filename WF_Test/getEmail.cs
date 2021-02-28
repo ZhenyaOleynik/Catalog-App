@@ -117,7 +117,7 @@ namespace WF_Test
                 return;
             }
             // EMAIL ////////////////////
-            MailAddress from = new MailAddress("mailsender37@gmail.com");
+            MailAddress from = new MailAddress(MAIL_ADDRESS);
             
             // recipient
             MailAddress to = new MailAddress(emailBox.Text);
@@ -135,7 +135,7 @@ namespace WF_Test
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
 
             // login and password
-            client.Credentials = new NetworkCredential("mailsender37@gmail.com", "sendmail64");
+            client.Credentials = new NetworkCredential(MAIL_ADDRESS, MAIL_PASS);
             client.EnableSsl = true;
 
             client.Send(m);
